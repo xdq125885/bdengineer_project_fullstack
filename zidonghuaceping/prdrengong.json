@@ -1,0 +1,466 @@
+[
+    {
+      "id": "TC_LOGIN_SUCCESS_001",
+      "feature": "用户登录",
+      "title": "使用正确的账号和密码登录成功",
+      "priority": "P0",
+      "type": "functional",
+      "preconditions": [
+        "系统已部署且登录页面可正常访问",
+        "测试账号已创建：username='test_user', password='Test@123456'",
+        "该账号状态为激活，密码错误次数为0"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开浏览器，访问登录页面",
+        "2. 在「账号」输入框输入：test_user",
+        "3. 在「密码」输入框输入：Test@123456",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录成功，无错误提示",
+        "2. 页面自动跳转至系统首页",
+        "3. 首页顶部显示当前登录用户名：test_user",
+        "4. 该账号的密码错误次数重置为0"
+      ],
+      "tags": ["positive", "login_success", "core_function"]
+    },
+    {
+      "id": "TC_LOGIN_VALIDATE_001",
+      "feature": "用户登录",
+      "title": "账号为空时提示错误",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "系统已部署且登录页面可正常访问"
+      ],
+      "testData": {
+        "username": "",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 账号输入框保持为空",
+        "3. 在「密码」输入框输入：Test@123456",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，页面不跳转",
+        "2. 账号输入框下方显示错误提示：「账号不能为空」",
+        "3. 密码错误次数不增加"
+      ],
+      "tags": ["negative", "validation", "empty_username"]
+    },
+    {
+      "id": "TC_LOGIN_VALIDATE_002",
+      "feature": "用户登录",
+      "title": "密码为空时提示错误",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "系统已部署且登录页面可正常访问"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": ""
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 在「账号」输入框输入：test_user",
+        "3. 密码输入框保持为空",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，页面不跳转",
+        "2. 密码输入框下方显示错误提示：「密码不能为空」",
+        "3. 密码错误次数不增加"
+      ],
+      "tags": ["negative", "validation", "empty_password"]
+    },
+    {
+      "id": "TC_LOGIN_VALIDATE_003",
+      "feature": "用户登录",
+      "title": "账号和密码均为空时提示错误",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "系统已部署且登录页面可正常访问"
+      ],
+      "testData": {
+        "username": "",
+        "password": ""
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 账号输入框保持为空",
+        "3. 密码输入框保持为空",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，页面不跳转",
+        "2. 账号输入框下方显示：「账号不能为空」",
+        "3. 密码输入框下方显示：「密码不能为空」"
+      ],
+      "tags": ["negative", "validation", "empty_both"]
+    },
+    {
+      "id": "TC_LOGIN_FAIL_001",
+      "feature": "用户登录",
+      "title": "密码错误第1次时提示错误且不触发验证码",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "系统已部署且登录页面可正常访问",
+        "测试账号已创建：username='test_user', password='Test@123456'",
+        "该账号密码错误次数为0"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@001"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 在「账号」输入框输入：test_user",
+        "3. 在「密码」输入框输入错误密码：WrongPass@001",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，页面不跳转",
+        "2. 显示错误提示：「密码错误，请重试」",
+        "3. 该账号密码错误次数累计为1",
+        "4. 页面未出现验证码输入框"
+      ],
+      "tags": ["negative", "wrong_password", "attempt_1"]
+    },
+    {
+      "id": "TC_LOGIN_FAIL_002",
+      "feature": "用户登录",
+      "title": "密码错误第2次时提示错误且不触发验证码",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计1次密码错误"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@002"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入错误密码：WrongPass@002",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「密码错误，请重试」",
+        "2. 密码错误次数累计为2",
+        "3. 页面未出现验证码输入框"
+      ],
+      "tags": ["negative", "wrong_password", "attempt_2"]
+    },
+    {
+      "id": "TC_LOGIN_FAIL_003",
+      "feature": "用户登录",
+      "title": "密码错误第3次时提示错误且不触发验证码",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计2次密码错误"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@003"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入错误密码：WrongPass@003",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「密码错误，请重试」",
+        "2. 密码错误次数累计为3",
+        "3. 页面未出现验证码输入框"
+      ],
+      "tags": ["negative", "wrong_password", "attempt_3"]
+    },
+    {
+      "id": "TC_LOGIN_FAIL_004",
+      "feature": "用户登录",
+      "title": "密码错误第4次时提示错误且不触发验证码",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计3次密码错误"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@004"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入错误密码：WrongPass@004",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「密码错误，请重试」",
+        "2. 密码错误次数累计为4",
+        "3. 页面未出现验证码输入框"
+      ],
+      "tags": ["negative", "wrong_password", "attempt_4"]
+    },
+    {
+      "id": "TC_LOGIN_FAIL_005",
+      "feature": "用户登录",
+      "title": "密码错误第5次时提示错误且不触发验证码",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计4次密码错误"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@005"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入错误密码：WrongPass@005",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「密码错误，请重试」",
+        "2. 密码错误次数累计为5",
+        "3. 页面未出现验证码输入框",
+        "4. 提示信息可能包含：「还剩1次机会，超过5次将触发验证码」"
+      ],
+      "tags": ["negative", "wrong_password", "attempt_5", "boundary"]
+    },
+    {
+      "id": "TC_LOGIN_CAPTCHA_001",
+      "feature": "用户登录",
+      "title": "密码错误第6次时触发验证码",
+      "priority": "P0",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计5次密码错误"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "WrongPass@006"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入错误密码：WrongPass@006",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「密码错误次数过多，请输入验证码」",
+        "2. 页面出现验证码输入框",
+        "3. 显示验证码图片或发送验证码按钮",
+        "4. 密码错误次数累计为6"
+      ],
+      "tags": ["negative", "captcha_trigger", "attempt_6", "security"]
+    },
+    {
+      "id": "TC_LOGIN_CAPTCHA_002",
+      "feature": "用户登录",
+      "title": "触发验证码后输入正确密码和正确验证码登录成功",
+      "priority": "P0",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已触发验证码（密码错误≥6次）",
+        "验证码功能正常"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456",
+        "captcha": "ABCD"
+      },
+      "steps": [
+        "1. 打开登录页面（已显示验证码输入框）",
+        "2. 输入账号：test_user",
+        "3. 输入正确密码：Test@123456",
+        "4. 输入正确验证码：ABCD",
+        "5. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录成功，跳转至系统首页",
+        "2. 首页显示用户名：test_user",
+        "3. 密码错误次数重置为0",
+        "4. 下次登录无需验证码（除非再次累计错误超5次）"
+      ],
+      "tags": ["positive", "captcha_success", "reset_counter"]
+    },
+    {
+      "id": "TC_LOGIN_CAPTCHA_003",
+      "feature": "用户登录",
+      "title": "触发验证码后输入正确密码但验证码错误登录失败",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已触发验证码",
+        "当前验证码为 ABCD"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456",
+        "captcha": "XXXX"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入正确密码：Test@123456",
+        "4. 输入错误验证码：XXXX",
+        "5. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败，显示：「验证码错误」",
+        "2. 验证码图片刷新为新的验证码",
+        "3. 密码错误次数不增加（仍为6）",
+        "4. 页面保持在登录页"
+      ],
+      "tags": ["negative", "captcha_wrong", "validation"]
+    },
+    {
+      "id": "TC_LOGIN_CAPTCHA_004",
+      "feature": "用户登录",
+      "title": "触发验证码后不输入验证码无法提交",
+      "priority": "P2",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已触发验证码"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456",
+        "captcha": ""
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入正确密码：Test@123456",
+        "4. 验证码输入框保持为空",
+        "5. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败",
+        "2. 显示：「请输入验证码」",
+        "3. 页面保持在登录页"
+      ],
+      "tags": ["negative", "captcha_empty", "validation"]
+    },
+    {
+      "id": "TC_LOGIN_RESET_001",
+      "feature": "用户登录",
+      "title": "密码错误5次后输入正确密码登录成功且错误次数重置",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已累计5次密码错误（未触发验证码）"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入账号：test_user",
+        "3. 输入正确密码：Test@123456",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录成功，跳转至系统首页",
+        "2. 密码错误次数重置为0",
+        "3. 下次登录无需验证码"
+      ],
+      "tags": ["positive", "reset_counter", "boundary"]
+    },
+    {
+      "id": "TC_LOGIN_ACCOUNT_001",
+      "feature": "用户登录",
+      "title": "输入不存在的账号登录失败",
+      "priority": "P1",
+      "type": "functional",
+      "preconditions": [
+        "系统中不存在账号 nonexistent_user"
+      ],
+      "testData": {
+        "username": "nonexistent_user",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开登录页面",
+        "2. 输入不存在的账号：nonexistent_user",
+        "3. 输入任意密码：Test@123456",
+        "4. 点击「登录」按钮"
+      ],
+      "expected": [
+        "1. 登录失败",
+        "2. 显示：「账号或密码错误」（不明确指出账号不存在，安全考虑）",
+        "3. 页面保持在登录页"
+      ],
+      "tags": ["negative", "nonexistent_account", "security"]
+    },
+    {
+      "id": "TC_LOGIN_REFRESH_001",
+      "feature": "用户登录",
+      "title": "触发验证码后刷新页面仍需输入验证码",
+      "priority": "P2",
+      "type": "functional",
+      "preconditions": [
+        "测试账号 test_user 已触发验证码"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开登录页面（已显示验证码）",
+        "2. 刷新浏览器页面（F5 或 Ctrl+R）",
+        "3. 输入账号：test_user",
+        "4. 观察页面状态"
+      ],
+      "expected": [
+        "1. 刷新后页面仍显示验证码输入框",
+        "2. 验证码图片已更新为新的验证码",
+        "3. 需要输入新的验证码才能登录"
+      ],
+      "tags": ["negative", "captcha_persist", "session"]
+    },
+    {
+      "id": "TC_LOGIN_SECURITY_001",
+      "feature": "用户登录",
+      "title": "验证密码在传输过程中已加密",
+      "priority": "P0",
+      "type": "security",
+      "preconditions": [
+        "浏览器开发者工具已打开",
+        "Network 面板已启用"
+      ],
+      "testData": {
+        "username": "test_user",
+        "password": "Test@123456"
+      },
+      "steps": [
+        "1. 打开浏览器开发者工具（F12）",
+        "2. 切换到 Network 标签页",
+        "3. 在登录页面输入账号：test_user",
+        "4. 输入密码：Test@123456",
+        "5. 点击「登录」按钮",
+        "6. 在 Network 面板查看登录请求的 Payload"
+      ],
+      "expected": [
+        "1. Payload 中的 password 字段为加密字符串（非明文 Test@123456）",
+        "2. 使用 HTTPS 协议传输",
+        "3. 响应中不包含明文密码"
+      ],
+      "tags": ["security", "encryption", "data_protection"]
+    }
+  ]
+  

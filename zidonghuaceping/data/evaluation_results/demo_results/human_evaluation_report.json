@@ -1,0 +1,1869 @@
+{
+  "timestamp": "2025-12-01T20:16:46.474098",
+  "total_cases": 17,
+  "individual_evaluations": [
+    {
+      "case_index": 0,
+      "case_text": "# 使用正确的账号和密码登录成功\n\n## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号状态为激活，密码错误次数为0\n\n## 操作步骤\n- 1. 打开浏览器，访问登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录成功，无错误提示\n- 2. 页面自动跳转至系统首页\n- 3. 首页顶部显示当前登录用户名：test_user\n- 4. 该账号的密码错误次数重置为0\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号状态为激活，密码错误次数为0",
+        "steps": "## 操作步骤\n- 1. 打开浏览器，访问登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录成功，无错误提示\n- 2. 页面自动跳转至系统首页\n- 3. 首页顶部显示当前登录用户名：test_user\n- 4. 该账号的密码错误次数重置为0"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8223971641756319,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.665981094504213,
+        "specificity_score": 0.7,
+        "overall_quality": 0.8223971641756319,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号状态为激活，密码错误次数为0",
+          "steps": "## 操作步骤\n- 1. 打开浏览器，访问登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录成功，无错误提示\n- 2. 页面自动跳转至系统首页\n- 3. 首页顶部显示当前登录用户名：test_user\n- 4. 该账号的密码错误次数重置为0"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 1,
+      "case_text": "# 账号为空时提示错误\n\n## 前置条件\n- 系统已部署且登录页面可正常访问\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示错误提示：「账号不能为空」\n- 3. 密码错误次数不增加\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示错误提示：「账号不能为空」\n- 3. 密码错误次数不增加"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8112044239070049,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5913628260466992,
+        "specificity_score": 0.7,
+        "overall_quality": 0.8112044239070049,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 在「密码」输入框输入：Test@123456\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示错误提示：「账号不能为空」\n- 3. 密码错误次数不增加"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 2,
+      "case_text": "# 密码为空时提示错误\n\n## 前置条件\n- 系统已部署且登录页面可正常访问\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 密码输入框下方显示错误提示：「密码不能为空」\n- 3. 密码错误次数不增加\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 密码输入框下方显示错误提示：「密码不能为空」\n- 3. 密码错误次数不增加"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8108541806802829,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5890278712018863,
+        "specificity_score": 0.7,
+        "overall_quality": 0.8108541806802829,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 密码输入框下方显示错误提示：「密码不能为空」\n- 3. 密码错误次数不增加"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 3,
+      "case_text": "# 账号和密码均为空时提示错误\n\n## 前置条件\n- 系统已部署且登录页面可正常访问\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示：「账号不能为空」\n- 3. 密码输入框下方显示：「密码不能为空」\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示：「账号不能为空」\n- 3. 密码输入框下方显示：「密码不能为空」"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8151831144385948,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.6178874295906316,
+        "specificity_score": 0.7,
+        "overall_quality": 0.8151831144385948,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 账号输入框保持为空\n- 3. 密码输入框保持为空\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 账号输入框下方显示：「账号不能为空」\n- 3. 密码输入框下方显示：「密码不能为空」"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 4,
+      "case_text": "# 密码错误第1次时提示错误且不触发验证码\n\n## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号密码错误次数为0\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入错误密码：WrongPass@001\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 显示错误提示：「密码错误，请重试」\n- 3. 该账号密码错误次数累计为1\n- 4. 页面未出现验证码输入框\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号密码错误次数为0",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入错误密码：WrongPass@001\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 显示错误提示：「密码错误，请重试」\n- 3. 该账号密码错误次数累计为1\n- 4. 页面未出现验证码输入框"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8534222083308756,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.606148055539171,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8534222083308756,
+        "quality_level": "优秀"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统已部署且登录页面可正常访问\n- 测试账号已创建：username='test_user', password='Test@123456'\n- 该账号密码错误次数为0",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 在「账号」输入框输入：test_user\n- 3. 在「密码」输入框输入错误密码：WrongPass@001\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，页面不跳转\n- 2. 显示错误提示：「密码错误，请重试」\n- 3. 该账号密码错误次数累计为1\n- 4. 页面未出现验证码输入框"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 5,
+      "case_text": "# 密码错误第2次时提示错误且不触发验证码\n\n## 前置条件\n- 测试账号 test_user 已累计1次密码错误\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@002\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为2\n- 3. 页面未出现验证码输入框\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计1次密码错误",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@002\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为2\n- 3. 页面未出现验证码输入框"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8431998206194229,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5379988041294865,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8431998206194229,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计1次密码错误",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@002\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为2\n- 3. 页面未出现验证码输入框"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 6,
+      "case_text": "# 密码错误第3次时提示错误且不触发验证码\n\n## 前置条件\n- 测试账号 test_user 已累计2次密码错误\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@003\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为3\n- 3. 页面未出现验证码输入框\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计2次密码错误",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@003\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为3\n- 3. 页面未出现验证码输入框"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8431998206194229,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5379988041294865,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8431998206194229,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计2次密码错误",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@003\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为3\n- 3. 页面未出现验证码输入框"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 7,
+      "case_text": "# 密码错误第4次时提示错误且不触发验证码\n\n## 前置条件\n- 测试账号 test_user 已累计3次密码错误\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@004\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为4\n- 3. 页面未出现验证码输入框\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计3次密码错误",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@004\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为4\n- 3. 页面未出现验证码输入框"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8431998206194231,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5379988041294868,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8431998206194231,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计3次密码错误",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@004\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为4\n- 3. 页面未出现验证码输入框"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 8,
+      "case_text": "# 密码错误第5次时提示错误且不触发验证码\n\n## 前置条件\n- 测试账号 test_user 已累计4次密码错误\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@005\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为5\n- 3. 页面未出现验证码输入框\n- 4. 提示信息可能包含：「还剩1次机会，超过5次将触发验证码」\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计4次密码错误",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@005\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为5\n- 3. 页面未出现验证码输入框\n- 4. 提示信息可能包含：「还剩1次机会，超过5次将触发验证码」"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8275210202053722,
+      "quality_details": {
+        "clarity_score": 0.75,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5668068013691485,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8275210202053722,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计4次密码错误",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@005\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误，请重试」\n- 2. 密码错误次数累计为5\n- 3. 页面未出现验证码输入框\n- 4. 提示信息可能包含：「还剩1次机会，超过5次将触发验证码」"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 9,
+      "case_text": "# 密码错误第6次时触发验证码\n\n## 前置条件\n- 测试账号 test_user 已累计5次密码错误\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@006\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「密码错误次数过多，请输入验证码」\n- 2. 页面出现验证码输入框\n- 3. 显示验证码图片或发送验证码按钮\n- 4. 密码错误次数累计为6\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计5次密码错误",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@006\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误次数过多，请输入验证码」\n- 2. 页面出现验证码输入框\n- 3. 显示验证码图片或发送验证码按钮\n- 4. 密码错误次数累计为6"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8490313992575034,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5768759950500224,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8490313992575034,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计5次密码错误",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入错误密码：WrongPass@006\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「密码错误次数过多，请输入验证码」\n- 2. 页面出现验证码输入框\n- 3. 显示验证码图片或发送验证码按钮\n- 4. 密码错误次数累计为6"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 10,
+      "case_text": "# 触发验证码后输入正确密码和正确验证码登录成功\n\n## 前置条件\n- 测试账号 test_user 已触发验证码（密码错误≥6次）\n- 验证码功能正常\n\n## 操作步骤\n- 1. 打开登录页面（已显示验证码输入框）\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入正确验证码：ABCD\n- 5. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 首页显示用户名：test_user\n- 3. 密码错误次数重置为0\n- 4. 下次登录无需验证码（除非再次累计错误超5次）\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码（密码错误≥6次）\n- 验证码功能正常",
+        "steps": "## 操作步骤\n- 1. 打开登录页面（已显示验证码输入框）\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入正确验证码：ABCD\n- 5. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 首页显示用户名：test_user\n- 3. 密码错误次数重置为0\n- 4. 下次登录无需验证码（除非再次累计错误超5次）"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8546895883503673,
+      "quality_details": {
+        "clarity_score": 0.8500000000000001,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.6145972556691154,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.8546895883503673,
+        "quality_level": "优秀"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码（密码错误≥6次）\n- 验证码功能正常",
+          "steps": "## 操作步骤\n- 1. 打开登录页面（已显示验证码输入框）\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入正确验证码：ABCD\n- 5. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 首页显示用户名：test_user\n- 3. 密码错误次数重置为0\n- 4. 下次登录无需验证码（除非再次累计错误超5次）"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 11,
+      "case_text": "# 触发验证码后输入正确密码但验证码错误登录失败\n\n## 前置条件\n- 测试账号 test_user 已触发验证码\n- 当前验证码为 ABCD\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入错误验证码：XXXX\n- 5. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败，显示：「验证码错误」\n- 2. 验证码图片刷新为新的验证码\n- 3. 密码错误次数不增加（仍为6）\n- 4. 页面保持在登录页\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码\n- 当前验证码为 ABCD",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入错误验证码：XXXX\n- 5. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败，显示：「验证码错误」\n- 2. 验证码图片刷新为新的验证码\n- 3. 密码错误次数不增加（仍为6）\n- 4. 页面保持在登录页"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8200972804897423,
+      "quality_details": {
+        "clarity_score": 0.8,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5839818699316146,
+        "specificity_score": 0.8,
+        "overall_quality": 0.8200972804897423,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码\n- 当前验证码为 ABCD",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 输入错误验证码：XXXX\n- 5. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败，显示：「验证码错误」\n- 2. 验证码图片刷新为新的验证码\n- 3. 密码错误次数不增加（仍为6）\n- 4. 页面保持在登录页"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 12,
+      "case_text": "# 触发验证码后不输入验证码无法提交\n\n## 前置条件\n- 测试账号 test_user 已触发验证码\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 验证码输入框保持为空\n- 5. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败\n- 2. 显示：「请输入验证码」\n- 3. 页面保持在登录页\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 验证码输入框保持为空\n- 5. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败\n- 2. 显示：「请输入验证码」\n- 3. 页面保持在登录页"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.832739724641278,
+      "quality_details": {
+        "clarity_score": 0.7999999999999999,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5349314976085207,
+        "specificity_score": 0.8999999999999999,
+        "overall_quality": 0.832739724641278,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 验证码输入框保持为空\n- 5. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败\n- 2. 显示：「请输入验证码」\n- 3. 页面保持在登录页"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 13,
+      "case_text": "# 密码错误5次后输入正确密码登录成功且错误次数重置\n\n## 前置条件\n- 测试账号 test_user 已累计5次密码错误（未触发验证码）\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 密码错误次数重置为0\n- 3. 下次登录无需验证码\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已累计5次密码错误（未触发验证码）",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 密码错误次数重置为0\n- 3. 下次登录无需验证码"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8187354311812912,
+      "quality_details": {
+        "clarity_score": 0.8,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.5749028745419411,
+        "specificity_score": 0.8,
+        "overall_quality": 0.8187354311812912,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已累计5次密码错误（未触发验证码）",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入账号：test_user\n- 3. 输入正确密码：Test@123456\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录成功，跳转至系统首页\n- 2. 密码错误次数重置为0\n- 3. 下次登录无需验证码"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 14,
+      "case_text": "# 输入不存在的账号登录失败\n\n## 前置条件\n- 系统中不存在账号 nonexistent_user\n\n## 操作步骤\n- 1. 打开登录页面\n- 2. 输入不存在的账号：nonexistent_user\n- 3. 输入任意密码：Test@123456\n- 4. 点击「登录」按钮\n\n## 预期结果\n- 1. 登录失败\n- 2. 显示：「账号或密码错误」（不明确指出账号不存在，安全考虑）\n- 3. 页面保持在登录页\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 系统中不存在账号 nonexistent_user",
+        "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入不存在的账号：nonexistent_user\n- 3. 输入任意密码：Test@123456\n- 4. 点击「登录」按钮",
+        "expected_result": "## 预期结果\n- 1. 登录失败\n- 2. 显示：「账号或密码错误」（不明确指出账号不存在，安全考虑）\n- 3. 页面保持在登录页"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.7850807493905184,
+      "quality_details": {
+        "clarity_score": 0.8,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.6172049959367896,
+        "specificity_score": 0.6000000000000001,
+        "overall_quality": 0.7850807493905184,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 系统中不存在账号 nonexistent_user",
+          "steps": "## 操作步骤\n- 1. 打开登录页面\n- 2. 输入不存在的账号：nonexistent_user\n- 3. 输入任意密码：Test@123456\n- 4. 点击「登录」按钮",
+          "expected_result": "## 预期结果\n- 1. 登录失败\n- 2. 显示：「账号或密码错误」（不明确指出账号不存在，安全考虑）\n- 3. 页面保持在登录页"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 15,
+      "case_text": "# 触发验证码后刷新页面仍需输入验证码\n\n## 前置条件\n- 测试账号 test_user 已触发验证码\n\n## 操作步骤\n- 1. 打开登录页面（已显示验证码）\n- 2. 刷新浏览器页面（F5 或 Ctrl+R）\n- 3. 输入账号：test_user\n- 4. 观察页面状态\n\n## 预期结果\n- 1. 刷新后页面仍显示验证码输入框\n- 2. 验证码图片已更新为新的验证码\n- 3. 需要输入新的验证码才能登录\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码",
+        "steps": "## 操作步骤\n- 1. 打开登录页面（已显示验证码）\n- 2. 刷新浏览器页面（F5 或 Ctrl+R）\n- 3. 输入账号：test_user\n- 4. 观察页面状态",
+        "expected_result": "## 预期结果\n- 1. 刷新后页面仍显示验证码输入框\n- 2. 验证码图片已更新为新的验证码\n- 3. 需要输入新的验证码才能登录"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.807905563096068,
+      "quality_details": {
+        "clarity_score": 0.65,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.7027037539737866,
+        "specificity_score": 0.8,
+        "overall_quality": 0.807905563096068,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 测试账号 test_user 已触发验证码",
+          "steps": "## 操作步骤\n- 1. 打开登录页面（已显示验证码）\n- 2. 刷新浏览器页面（F5 或 Ctrl+R）\n- 3. 输入账号：test_user\n- 4. 观察页面状态",
+          "expected_result": "## 预期结果\n- 1. 刷新后页面仍显示验证码输入框\n- 2. 验证码图片已更新为新的验证码\n- 3. 需要输入新的验证码才能登录"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    },
+    {
+      "case_index": 16,
+      "case_text": "# 验证密码在传输过程中已加密\n\n## 前置条件\n- 浏览器开发者工具已打开\n- Network 面板已启用\n\n## 操作步骤\n- 1. 打开浏览器开发者工具（F12）\n- 2. 切换到 Network 标签页\n- 3. 在登录页面输入账号：test_user\n- 4. 输入密码：Test@123456\n- 5. 点击「登录」按钮\n- 6. 在 Network 面板查看登录请求的 Payload\n\n## 预期结果\n- 1. Payload 中的 password 字段为加密字符串（非明文 Test@123456）\n- 2. 使用 HTTPS 协议传输\n- 3. 响应中不包含明文密码\n",
+      "structure": {
+        "title": "",
+        "precondition": "## 前置条件\n- 浏览器开发者工具已打开\n- Network 面板已启用",
+        "steps": "## 操作步骤\n- 1. 打开浏览器开发者工具（F12）\n- 2. 切换到 Network 标签页\n- 3. 在登录页面输入账号：test_user\n- 4. 输入密码：Test@123456\n- 5. 点击「登录」按钮\n- 6. 在 Network 面板查看登录请求的 Payload",
+        "expected_result": "## 预期结果\n- 1. Payload 中的 password 字段为加密字符串（非明文 Test@123456）\n- 2. 使用 HTTPS 协议传输\n- 3. 响应中不包含明文密码"
+      },
+      "structure_score": 0.9000000000000001,
+      "quality_score": 0.8093190222991147,
+      "quality_details": {
+        "clarity_score": 0.65,
+        "completeness_score": 0.8500000000000001,
+        "executability_score": 0.9999999999999999,
+        "independence_score": 0.7121268153274309,
+        "specificity_score": 0.8,
+        "overall_quality": 0.8093190222991147,
+        "quality_level": "良好"
+      },
+      "structure_details": {
+        "structure": {
+          "title": "",
+          "precondition": "## 前置条件\n- 浏览器开发者工具已打开\n- Network 面板已启用",
+          "steps": "## 操作步骤\n- 1. 打开浏览器开发者工具（F12）\n- 2. 切换到 Network 标签页\n- 3. 在登录页面输入账号：test_user\n- 4. 输入密码：Test@123456\n- 5. 点击「登录」按钮\n- 6. 在 Network 面板查看登录请求的 Payload",
+          "expected_result": "## 预期结果\n- 1. Payload 中的 password 字段为加密字符串（非明文 Test@123456）\n- 2. 使用 HTTPS 协议传输\n- 3. 响应中不包含明文密码"
+        },
+        "presence": {
+          "title": false,
+          "precondition": true,
+          "steps": true,
+          "expected_result": true
+        },
+        "quality": {
+          "title": 0.0,
+          "precondition": 1.0,
+          "steps": 1.0,
+          "expected_result": 1.0
+        },
+        "completeness_score": 0.9000000000000001,
+        "details": {
+          "has_title": false,
+          "has_precondition": true,
+          "has_steps": true,
+          "has_expected_result": true
+        }
+      }
+    }
+  ],
+  "aggregate_scores": {
+    "avg_structure_score": 0.9000000000000002,
+    "avg_quality_score": 0.8263400195471715,
+    "uniqueness_score": 0.4558823529411765,
+    "coverage_score": 0.6457142857142857
+  },
+  "detailed_analysis": {
+    "uniqueness": {
+      "total_cases": 17,
+      "exact_duplicates": [],
+      "exact_duplicate_count": 0,
+      "near_duplicates": [
+        [
+          0,
+          2,
+          0.8607097864151001
+        ],
+        [
+          0,
+          4,
+          0.9547141194343567
+        ],
+        [
+          0,
+          5,
+          0.8952258825302124
+        ],
+        [
+          0,
+          6,
+          0.8808070421218872
+        ],
+        [
+          0,
+          7,
+          0.882188081741333
+        ],
+        [
+          0,
+          8,
+          0.8781296014785767
+        ],
+        [
+          0,
+          9,
+          0.8712540864944458
+        ],
+        [
+          0,
+          10,
+          0.9229658842086792
+        ],
+        [
+          0,
+          12,
+          0.8906567096710205
+        ],
+        [
+          0,
+          13,
+          0.9004549980163574
+        ],
+        [
+          0,
+          14,
+          0.8577193021774292
+        ],
+        [
+          1,
+          2,
+          0.9504145979881287
+        ],
+        [
+          1,
+          3,
+          0.9487025737762451
+        ],
+        [
+          1,
+          12,
+          0.8734676241874695
+        ],
+        [
+          1,
+          14,
+          0.9277805089950562
+        ],
+        [
+          2,
+          3,
+          0.9509614706039429
+        ],
+        [
+          2,
+          4,
+          0.8734574317932129
+        ],
+        [
+          2,
+          5,
+          0.8835688233375549
+        ],
+        [
+          2,
+          6,
+          0.8751362562179565
+        ],
+        [
+          2,
+          7,
+          0.8674759268760681
+        ],
+        [
+          2,
+          8,
+          0.8585245013237
+        ],
+        [
+          2,
+          12,
+          0.8825833797454834
+        ],
+        [
+          2,
+          13,
+          0.8800270557403564
+        ],
+        [
+          2,
+          14,
+          0.9073835611343384
+        ],
+        [
+          3,
+          14,
+          0.8897465467453003
+        ],
+        [
+          4,
+          5,
+          0.9453703165054321
+        ],
+        [
+          4,
+          6,
+          0.9396076798439026
+        ],
+        [
+          4,
+          7,
+          0.9410033226013184
+        ],
+        [
+          4,
+          8,
+          0.9306414723396301
+        ],
+        [
+          4,
+          9,
+          0.9149022698402405
+        ],
+        [
+          4,
+          10,
+          0.9112244844436646
+        ],
+        [
+          4,
+          11,
+          0.8545620441436768
+        ],
+        [
+          4,
+          12,
+          0.8818448781967163
+        ],
+        [
+          4,
+          13,
+          0.9171552658081055
+        ],
+        [
+          4,
+          14,
+          0.8543236255645752
+        ],
+        [
+          5,
+          6,
+          0.98619544506073
+        ],
+        [
+          5,
+          7,
+          0.9718741774559021
+        ],
+        [
+          5,
+          8,
+          0.9615009427070618
+        ],
+        [
+          5,
+          9,
+          0.9434992074966431
+        ],
+        [
+          5,
+          10,
+          0.9123406410217285
+        ],
+        [
+          5,
+          11,
+          0.8649009466171265
+        ],
+        [
+          5,
+          12,
+          0.8922251462936401
+        ],
+        [
+          5,
+          13,
+          0.9469514489173889
+        ],
+        [
+          5,
+          14,
+          0.8557232618331909
+        ],
+        [
+          6,
+          7,
+          0.9814918637275696
+        ],
+        [
+          6,
+          8,
+          0.9540956020355225
+        ],
+        [
+          6,
+          9,
+          0.9287934303283691
+        ],
+        [
+          6,
+          10,
+          0.8993276357650757
+        ],
+        [
+          6,
+          11,
+          0.859885573387146
+        ],
+        [
+          6,
+          12,
+          0.8788145780563354
+        ],
+        [
+          6,
+          13,
+          0.9345924258232117
+        ],
+        [
+          6,
+          14,
+          0.8515342473983765
+        ],
+        [
+          7,
+          8,
+          0.9812169075012207
+        ],
+        [
+          7,
+          9,
+          0.9538319110870361
+        ],
+        [
+          7,
+          10,
+          0.9089949131011963
+        ],
+        [
+          7,
+          11,
+          0.8660163283348083
+        ],
+        [
+          7,
+          12,
+          0.8724468946456909
+        ],
+        [
+          7,
+          13,
+          0.9550719261169434
+        ],
+        [
+          8,
+          9,
+          0.9793572425842285
+        ],
+        [
+          8,
+          10,
+          0.9082564115524292
+        ],
+        [
+          8,
+          11,
+          0.8535754680633545
+        ],
+        [
+          8,
+          12,
+          0.8616927862167358
+        ],
+        [
+          8,
+          13,
+          0.9685942530632019
+        ],
+        [
+          9,
+          10,
+          0.9148687124252319
+        ],
+        [
+          9,
+          11,
+          0.8566852807998657
+        ],
+        [
+          9,
+          12,
+          0.8534785509109497
+        ],
+        [
+          9,
+          13,
+          0.9668705463409424
+        ],
+        [
+          10,
+          11,
+          0.904382586479187
+        ],
+        [
+          10,
+          12,
+          0.9208884835243225
+        ],
+        [
+          10,
+          13,
+          0.9428516626358032
+        ],
+        [
+          11,
+          13,
+          0.8602075576782227
+        ],
+        [
+          12,
+          13,
+          0.8756345510482788
+        ],
+        [
+          12,
+          14,
+          0.8760209083557129
+        ],
+        [
+          12,
+          15,
+          0.8792060613632202
+        ]
+      ],
+      "near_duplicate_count": 74,
+      "total_duplicate_pairs": 74,
+      "deduplication_rate": 0.4558823529411765,
+      "diversity_score": 0.4558823529411765,
+      "scenario_diversity": {
+        "scenarios": {
+          "正常场景": 9,
+          "异常场景": 15,
+          "边界场景": 4,
+          "性能场景": 1,
+          "安全场景": 2
+        },
+        "covered_scenarios": 5,
+        "total_scenarios": 5,
+        "diversity_score": 1.0
+      },
+      "quality_level": "需改进"
+    },
+    "coverage": {
+      "requirement_coverage": {
+        "coverage_rate": 0.6,
+        "covered_count": 3,
+        "uncovered_count": 2,
+        "total_requirements": 5,
+        "covered_requirements": [
+          "支持账号+密码登录",
+          "密码输入错误超过5次触发验证码",
+          "登录成功后跳转首页"
+        ],
+        "uncovered_requirements": [
+          "用户登录\n\n## 目标\n为B端管理系统提供安全的登录能力",
+          "系统提供安全的登录能力"
+        ],
+        "coverage_details": {
+          "支持账号+密码登录": {
+            "covered": true,
+            "matching_cases": [
+              {
+                "case_index": 0,
+                "score": 0.5556,
+                "jaccard": 0.036,
+                "req_ratio": 0.5556,
+                "case_ratio": 0.037,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "码登",
+                  "码登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 1,
+                "score": 0.3333,
+                "jaccard": 0.0268,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0283,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 2,
+                "score": 0.3333,
+                "jaccard": 0.027,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0286,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 3,
+                "score": 0.3333,
+                "jaccard": 0.0303,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0323,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 4,
+                "score": 0.3333,
+                "jaccard": 0.0231,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0242,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 5,
+                "score": 0.3333,
+                "jaccard": 0.0316,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0337,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 6,
+                "score": 0.3333,
+                "jaccard": 0.0316,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0337,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 7,
+                "score": 0.3333,
+                "jaccard": 0.0316,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0337,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 8,
+                "score": 0.3333,
+                "jaccard": 0.0259,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0273,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 9,
+                "score": 0.3333,
+                "jaccard": 0.027,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0286,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 10,
+                "score": 0.4444,
+                "jaccard": 0.0278,
+                "req_ratio": 0.4444,
+                "case_ratio": 0.0288,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "码登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 11,
+                "score": 0.3333,
+                "jaccard": 0.0256,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.027,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 12,
+                "score": 0.3333,
+                "jaccard": 0.0326,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0349,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 13,
+                "score": 0.5556,
+                "jaccard": 0.0495,
+                "req_ratio": 0.5556,
+                "case_ratio": 0.0515,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "码登",
+                  "码登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 14,
+                "score": 0.3333,
+                "jaccard": 0.0303,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0323,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              },
+              {
+                "case_index": 16,
+                "score": 0.3333,
+                "jaccard": 0.0226,
+                "req_ratio": 0.3333,
+                "case_ratio": 0.0236,
+                "matched_keywords": [
+                  "密码",
+                  "登录",
+                  "账号"
+                ]
+              }
+            ],
+            "req_keywords": [
+              "密码",
+              "密码登",
+              "持账",
+              "持账号",
+              "支持账",
+              "登录",
+              "码登",
+              "码登录",
+              "账号"
+            ]
+          },
+          "密码输入错误超过5次触发验证码": {
+            "covered": true,
+            "matching_cases": [
+              {
+                "case_index": 4,
+                "score": 0.5455,
+                "jaccard": 0.0896,
+                "req_ratio": 0.5455,
+                "case_ratio": 0.0968,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证"
+                ]
+              },
+              {
+                "case_index": 5,
+                "score": 0.5455,
+                "jaccard": 0.1212,
+                "req_ratio": 0.5455,
+                "case_ratio": 0.1348,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证"
+                ]
+              },
+              {
+                "case_index": 6,
+                "score": 0.5455,
+                "jaccard": 0.1212,
+                "req_ratio": 0.5455,
+                "case_ratio": 0.1348,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证"
+                ]
+              },
+              {
+                "case_index": 7,
+                "score": 0.5455,
+                "jaccard": 0.1212,
+                "req_ratio": 0.5455,
+                "case_ratio": 0.1348,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证"
+                ]
+              },
+              {
+                "case_index": 8,
+                "score": 0.6818,
+                "jaccard": 0.1282,
+                "req_ratio": 0.6818,
+                "case_ratio": 0.1364,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "超过",
+                  "输入错",
+                  "错误",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 9,
+                "score": 0.6364,
+                "jaccard": 0.1239,
+                "req_ratio": 0.6364,
+                "case_ratio": 0.1333,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 10,
+                "score": 0.5909,
+                "jaccard": 0.0878,
+                "req_ratio": 0.5909,
+                "case_ratio": 0.0935,
+                "matched_keywords": [
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "误超",
+                  "错误",
+                  "错误超",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 11,
+                "score": 0.5455,
+                "jaccard": 0.0992,
+                "req_ratio": 0.5455,
+                "case_ratio": 0.1081,
+                "matched_keywords": [
+                  "入错",
+                  "入错误",
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "输入错",
+                  "错误",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 12,
+                "score": 0.5,
+                "jaccard": 0.1134,
+                "req_ratio": 0.5,
+                "case_ratio": 0.1279,
+                "matched_keywords": [
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "码输",
+                  "码输入",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "错误",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 13,
+                "score": 0.4091,
+                "jaccard": 0.0818,
+                "req_ratio": 0.4091,
+                "case_ratio": 0.0928,
+                "matched_keywords": [
+                  "发验",
+                  "发验证",
+                  "密码",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "错误",
+                  "验证",
+                  "验证码"
+                ]
+              },
+              {
+                "case_index": 15,
+                "score": 0.4091,
+                "jaccard": 0.0769,
+                "req_ratio": 0.4091,
+                "case_ratio": 0.0865,
+                "matched_keywords": [
+                  "发验",
+                  "发验证",
+                  "码输",
+                  "码输入",
+                  "触发",
+                  "触发验",
+                  "证码",
+                  "验证",
+                  "验证码"
+                ]
+              }
+            ],
+            "req_keywords": [
+              "入错",
+              "入错误",
+              "发验",
+              "发验证",
+              "密码",
+              "密码输",
+              "次触",
+              "次触发",
+              "码输",
+              "码输入",
+              "触发",
+              "触发验",
+              "证码",
+              "误超",
+              "误超过",
+              "超过",
+              "输入",
+              "输入错",
+              "错误",
+              "错误超",
+              "验证",
+              "验证码"
+            ]
+          },
+          "登录成功后跳转首页": {
+            "covered": true,
+            "matching_cases": [
+              {
+                "case_index": 0,
+                "score": 0.4667,
+                "jaccard": 0.049,
+                "req_ratio": 0.4667,
+                "case_ratio": 0.0519,
+                "matched_keywords": [
+                  "录成",
+                  "录成功",
+                  "成功",
+                  "登录",
+                  "登录成",
+                  "跳转",
+                  "首页"
+                ]
+              },
+              {
+                "case_index": 10,
+                "score": 0.4667,
+                "jaccard": 0.0476,
+                "req_ratio": 0.4667,
+                "case_ratio": 0.0504,
+                "matched_keywords": [
+                  "录成",
+                  "录成功",
+                  "成功",
+                  "登录",
+                  "登录成",
+                  "跳转",
+                  "首页"
+                ]
+              },
+              {
+                "case_index": 13,
+                "score": 0.4667,
+                "jaccard": 0.0667,
+                "req_ratio": 0.4667,
+                "case_ratio": 0.0722,
+                "matched_keywords": [
+                  "录成",
+                  "录成功",
+                  "成功",
+                  "登录",
+                  "登录成",
+                  "跳转",
+                  "首页"
+                ]
+              }
+            ],
+            "req_keywords": [
+              "功后",
+              "功后跳",
+              "后跳",
+              "后跳转",
+              "录成",
+              "录成功",
+              "成功",
+              "成功后",
+              "登录",
+              "登录成",
+              "跳转",
+              "跳转首",
+              "转首",
+              "转首页",
+              "首页"
+            ]
+          },
+          "用户登录\n\n## 目标\n为B端管理系统提供安全的登录能力": {
+            "covered": false,
+            "matching_cases": [],
+            "req_keywords": [
+              "##",
+              "供安",
+              "全的",
+              "安全",
+              "安全的",
+              "录能",
+              "户登",
+              "户登录",
+              "提供安",
+              "理系",
+              "理系统",
+              "用户登",
+              "登录",
+              "登录能",
+              "的登",
+              "目标",
+              "端管",
+              "端管理",
+              "能力"
+            ]
+          },
+          "系统提供安全的登录能力": {
+            "covered": false,
+            "matching_cases": [],
+            "req_keywords": [
+              "供安",
+              "全的",
+              "全的登",
+              "安全",
+              "安全的",
+              "录能",
+              "录能力",
+              "提供安",
+              "登录",
+              "登录能",
+              "的登",
+              "的登录",
+              "统提",
+              "能力"
+            ]
+          }
+        },
+        "threshold_used": 0.3
+      },
+      "feature_coverage": {
+        "feature_coverage": {
+          "正常流程": {
+            "count": 9,
+            "covered": true
+          },
+          "异常流程": {
+            "count": 15,
+            "covered": true
+          },
+          "边界值": {
+            "count": 4,
+            "covered": true
+          },
+          "权限控制": {
+            "count": 0,
+            "covered": false
+          },
+          "数据验证": {
+            "count": 12,
+            "covered": true
+          },
+          "性能": {
+            "count": 1,
+            "covered": true
+          },
+          "并发": {
+            "count": 0,
+            "covered": false
+          }
+        },
+        "covered_features": 5,
+        "total_features": 7,
+        "feature_coverage_rate": 0.7142857142857143
+      },
+      "overall_coverage": 0.6457142857142857,
+      "requirements_extracted": 5
+    }
+  },
+  "overall_score": 0.7420022645118525
+}
