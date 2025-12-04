@@ -1,73 +1,369 @@
-# React + TypeScript + Vite
+# 🤖 基于大模型的测试用例生成器
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个全栈应用，利用大语言模型（LLM）自动生成高质量的测试用例。支持多种输入方式（PRD文本、飞书文档、UI截图）、流式输出、思维导图可视化和测试用例评测。
 
-Currently, two official plugins are available:
+## ✨ 主要特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **多源输入支持**
+  - 📝 粘贴 PRD 文本直接生成测试用例
+  - 🔗 输入飞书文档链接自动提取内容
+  - 🖼️ 上传 UI 截图或流程图进行多模态识别
 
-## React Compiler
+- **智能生成**
+  - 🧠 基于大语言模型的智能测试用例生成
+  - ⚙️ 可调节温度参数控制生成的多样性
+  - 📊 支持流式输出（SSE）实时显示生成进度
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **可视化与导出**
+  - 📋 表格视图展示测试用例
+  - 🧭 思维导图视图展示用例关系
+  - 📋 复制为 Markdown 格式
+  - 📄 导出为 JSON 格式
 
-## Expanding the ESLint configuration
+- **测试评测**
+  - 🎯 内置测试用例评测工具
+  - 📈 支持相似度匹配和指标计算
+  - 💾 自动保存最新生成的用例
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🏗️ 项目结构
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+test-case-generator/
+├── frontend/                    # React + Vite 前端应用
+│   ├── src/
+│   │   ├── components/         # React 组件
+│   │   │   ├── InputPanel.tsx       # 输入面板（PRD、飞书、图片）
+│   │   │   ├── Controls.tsx         # 参数控制面板
+│   │   │   ├── ResultsTable.tsx     # 结果表格视图
+│   │   │   ├── MindMapFlow.tsx      # 思维导图视图
+│   │   │   ├── ProgressPanel.tsx    # 流式输出进度面板
+│   │   │   ├── TestCaseGenerator.tsx # 主生成器组件
+│   │   │   └── MindMapView.tsx      # 思维导图渲染
+│   │   ├── pages/
+│   │   │   └── EvalPage.tsx        # 测试评测页面
+│   │   ├── services/
+│   │   │   └── api.ts              # API 调用服务
+│   │   ├── utils/
+│   │   │   ├── generate.ts         # 生成逻辑
+│   │   │   ├── markdown.ts         # Markdown 导出
+│   │   │   ├── storage.ts          # 本地存储
+│   │   │   ├── stream.ts           # SSE 流式处理
+│   │   │   └── ...
+│   │   ├── eval/                   # 评测模块
+│   │   │   ├── evaluate.ts         # 评测主逻辑
+│   │   │   ├── similarity.ts       # 相似度计算
+│   │   │   ├── metrics.ts          # 指标计算
+│   │   │   └── ...
+│   │   ├── App.tsx                 # 主应用
+│   │   ├── main.tsx                # 入口
+│   │   └── types.ts                # TypeScript 类型定义
+│   ├── package.json
+│   ├── vite.config.ts
+│   ├── tsconfig.json
+│   └── tailwind.config.js
+│
+└── backend/                     # Express.js 后端服务
+    ├── src/
+    │   ├── controllers/         # 请求处理器
+    │   │   ├── generate.controller.ts      # 普通生成接口
+    │   │   ├── generate.stream.controller.ts # 流式生成接口
+    │   │   └── lark.controller.ts          # 飞书文档处理
+    │   ├── services/            # 业务逻辑
+    │   │   ├── generate.service.ts    # 生成服务
+    │   │   └── lark.service.ts        # 飞书 API 服务
+    │   └── index.ts             # 服务器入口
+    ├── package.json
+    ├── tsconfig.json
+    ├── .env                     # 环境配置示例
+    └── .env.local               # 本地环境配置（不提交）
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 快速开始
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 前置要求
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js >= 18.0.0
+- npm 或 yarn
+- LLM API 密钥（OpenAI 或兼容的 API）
+- （可选）飞书应用凭证（用于读取飞书文档）
+
+### 安装依赖
+
+```bash
+# 安装前端依赖
+npm install
+
+# 安装后端依赖
+cd backend
+npm install
+cd ..
 ```
+
+### 环境配置
+
+在 `backend` 目录创建 `.env.local` 文件：
+
+```env
+# LLM 配置（必需）
+LLM_API_KEY=your_api_key_here
+LLM_BASE_URL=  # 支持兼容 API
+LLM_MODEL=               # 使用的模型
+
+# 飞书配置（可选，用于读取飞书文档）
+LARK_APP_ID=your_lark_app_id
+LARK_APP_SECRET=your_lark_app_secret
+
+# 服务器配置
+PORT=8787
+CORS_ORIGIN=http://localhost:5173,http://localhost:3000
+
+# 环境
+NODE_ENV=development
+```
+
+### 启动开发服务
+
+```bash
+# 终端 1：启动后端服务
+cd backend
+npm run dev
+# 后端运行在 http://localhost:8787
+
+# 终端 2：启动前端开发服务
+npm run dev
+# 前端运行在 http://localhost:5173
+```
+
+访问 http://localhost:5173 即可使用应用。
+
+### 生产构建
+
+```bash
+# 构建前端
+npm run build
+
+# 构建后端
+cd backend
+npm run build
+npm start
+```
+
+## 📖 使用指南
+
+### 1. 生成测试用例
+
+**方式一：粘贴 PRD 文本**
+- 在左侧输入框粘贴产品需求文档
+- 点击"生成测试用例"按钮
+
+**方式二：输入飞书文档链接**
+- 在飞书链接输入框粘贴文档 URL
+- 后端会自动提取文档内容
+
+**方式三：上传 UI 截图**
+- 点击上传按钮选择 UI 截图或流程图
+- 支持多模态识别（需后端模型支持）
+
+### 2. 调整生成参数
+
+- **温度（Temperature）**：控制生成的多样性
+  - 低温度（0.0-0.3）：更稳定、一致的结果
+  - 高温度（0.7-1.0）：更多样、创意的结果
+
+### 3. 流式输出（Beta）
+
+- 勾选"流式输出(beta)"复选框
+- 实时查看生成进度和中间结果
+- 支持随时停止生成
+
+### 4. 查看结果
+
+- **表格视图**：清晰展示所有测试用例
+- **思维导图**：可视化用例之间的关系
+
+### 5. 导出结果
+
+- **复制 Markdown**：复制为 Markdown 格式
+- **导出 JSON**：下载为 JSON 文件
+
+### 6. 评测用例
+
+- 点击"一键评测"进入评测页面
+- 支持与已有用例的相似度对比
+- 查看详细的评测指标
+
+## 🔧 API 文档
+
+### 后端 API 端点
+
+#### 1. 生成测试用例（普通模式）
+
+```
+POST /api/generate
+Content-Type: application/json
+
+{
+  "prdText": "产品需求文档内容",
+  "larkUrl": "https://...",  // 可选
+  "images": [                 // 可选
+    {
+      "data": "base64_encoded_image",
+      "type": "image/png"
+    }
+  ],
+  "options": {
+    "temperature": 0.2
+  }
+}
+```
+
+**响应：**
+```json
+[
+  {
+    "id": "tc_001",
+    "title": "用户登录成功",
+    "description": "用户输入正确的用户名和密码后成功登录",
+    "steps": [
+      "打开登录页面",
+      "输入用户名",
+      "输入密码",
+      "点击登录按钮"
+    ],
+    "expectedResult": "成功登录，跳转到首页",
+    "priority": "high"
+  },
+  ...
+]
+```
+
+#### 2. 生成测试用例（流式模式）
+
+```
+POST /api/generate/stream
+Content-Type: application/json
+
+// 请求体同上
+```
+
+**响应：** Server-Sent Events (SSE) 流
+
+```
+event: meta
+data: {"mode":"vision","model":"gpt-4o-mini"}
+
+event: cases
+data: [{"id":"tc_001",...},{"id":"tc_002",...}]
+
+event: cases
+data: [{"id":"tc_003",...}]
+
+event: done
+data: {}
+```
+
+#### 3. 读取飞书文档
+
+```
+POST /api/lark/raw
+Content-Type: application/json
+
+{
+  "docUrl": "https://..."
+}
+```
+
+**响应：**
+```json
+{
+  "content": "文档内容",
+  "title": "文档标题"
+}
+```
+
+#### 4. 健康检查
+
+```
+GET /health
+```
+
+**响应：**
+```json
+{ "ok": true }
+```
+
+## 🧪 测试用例格式
+
+生成的测试用例遵循以下 TypeScript 类型：
+
+```typescript
+interface TestCase {
+  id: string;                    // 用例 ID
+  title: string;                 // 用例标题
+  description?: string;          // 用例描述
+  steps: string[];              // 测试步骤
+  expectedResult: string;        // 预期结果
+  priority?: 'high' | 'medium' | 'low';  // 优先级
+  tags?: string[];              // 标签
+  preconditions?: string[];     // 前置条件
+  postconditions?: string[];    // 后置条件
+}
+```
+
+
+## 📦 技术栈
+
+### 前端
+- **React 19** - UI 框架
+- **Vite 7** - 构建工具
+- **TypeScript** - 类型安全
+- **Tailwind CSS** - 样式框架
+- **ReactFlow** - 思维导图渲染
+- **XLSX** - Excel 导出支持
+- **Lucide React** - 图标库
+
+### 后端
+- **Express.js** - Web 框架
+- **TypeScript** - 类型安全
+- **CORS** - 跨域支持
+- **dotenv** - 环境配置
+
+## 🤝 贡献指南
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+## 📝 注意事项
+
+### 部署到 Nginx
+
+如果使用 Nginx 代理后端，请在 Nginx 配置中关闭代理缓冲，以支持 SSE 流式输出：
+
+```nginx
+location /api/generate/stream {
+    proxy_buffering off;
+    proxy_pass http://backend:8787;
+}
+```
+
+### 图片上传
+
+- 前端将图片转换为 base64 格式发送给后端
+- 后端可将图片保存到 `uploads` 目录
+- 支持的格式：PNG、JPG、GIF 等常见图片格式
+
+### 多模态支持
+
+- 需要后端 LLM 支持图像输入（如 OpenAI 的 `gpt-4-vision`）
+- 当前配置使用 `gpt-4o-mini` 支持多模态
+
+## 📄 许可证
+
+MIT License
+
+
+
+有问题或建议？欢迎提交 Issue 或 PR！[object Object]
