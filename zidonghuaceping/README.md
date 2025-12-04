@@ -52,36 +52,6 @@ open data/evaluation_results/demo_results/ai_evaluation_report.html
 
 ---
 
-## 📁 项目结构
-
-```
-.
-├── evaluation/                 # 核心评测模块
-│   ├── models/                # 模型层
-│   │   ├── sentence_encoder.py    # 文本编码器（PyTorch）
-│   │   └── similarity_model.py    # 相似度计算
-│   ├── metrics/               # 评测指标层
-│   │   ├── structure_metric.py    # 结构完整性
-│   │   ├── coverage_metric.py     # 覆盖率
-│   │   ├── quality_metric.py      # 内容质量
-│   │   ├── similarity_metric.py   # 语义相似度
-│   │   └── uniqueness_metric.py   # 去重性
-│   ├── evaluator.py           # 主评测器
-│   ├── visualizer.py          # 可视化模块
-│   ├── utils.py               # 工具函数
-│   └── config.py              # 配置文件
-├── main.py                    # 命令行入口
-├── demo.py                    # 演示脚本
-├── requirements.txt           # 依赖列表
-├── 用户登录.md                # 示例PRD
-├── PRDAI1.json               # 示例AI用例
-├── prdrengong.json           # 示例人工用例
-├── QUICKSTART.md             # 快速开始
-├── RUN_GUIDE.md              # 运行指南
-└── README.md                 # 本文件
-```
-
----
 
 ## 🎓 使用方式
 
@@ -167,59 +137,6 @@ AI生成用例综合分数:    0.7234
 相似度            0.7800      N/A         N/A
 ```
 
-### 改进建议
-
-```
-💡 改进建议：
-  1. 重点改进: 内容质量 (当前分数: 0.68)
-  2. 增加用例多样性，减少重复
-  3. 扩大需求覆盖范围
-  4. 提高用例描述的清晰度和具体性
-```
-
----
-
-## 📝 输入文件格式
-
-### PRD文件（Markdown）
-
-```markdown
-# 用户登录
-
-## 目标
-为B端管理系统提供安全的登录能力。
-
-## 业务规则
-- 支持账号+密码登录
-- 密码输入错误超过5次触发验证码
-- 登录成功后跳转首页
-
-## 用例示例
-- 输入正确的用户名和密码
-- 输入错误密码
-- 空用户名或空密码
-```
-
-### 测试用例（Markdown）
-
-```markdown
-# 用例标题
-
-## 前置条件
-- 系统已部署
-- 存在测试账号
-
-## 操作步骤
-1. 打开登录页面
-2. 输入账号
-3. 输入密码
-4. 点击登录
-
-## 预期结果
-- 登录成功
-- 跳转首页
-- 显示用户名
-```
 
 ### 测试用例（JSON）
 
@@ -319,68 +236,11 @@ MODEL_CONFIG = {
 覆盖率 = (被覆盖需求数) / (总需求数)
 ```
 
-**改进方法：**
-- 仔细分析PRD中的所有需求
-- 为每个需求设计对应用例
-- 考虑多种场景和边界情况
 
-### 5. 相似度 (Similarity)
 
-**用途：**
-- 评估生成用例是否与参考用例相似
-- 检测是否覆盖了参考场景
-- 指导模型改进
 
-**改进方法：**
-- 相似度过低 → 生成用例与参考差异大
-- 相似度过高 → 生成用例缺乏创新
 
----
 
-## 🎯 最佳实践
-
-### 1. 编写高质量的PRD
-
-```markdown
-✓ 明确系统目标
-✓ 详细列出业务规则
-✓ 提供具体的用例示例
-✓ 说明边界和约束条件
-```
-
-### 2. 设计全面的参考用例
-
-```markdown
-✓ 覆盖正常流程
-✓ 覆盖异常流程
-✓ 覆盖边界值
-✓ 覆盖安全性
-✓ 覆盖性能
-```
-
-### 3. 优化生成Prompt
-
-```
-提示词要素：
-✓ 明确的任务描述
-✓ 输入输出格式说明
-✓ 质量标准和要求
-✓ 具体的示例
-✓ 边界和约束条件
-```
-
-### 4. 迭代改进
-
-```
-循环流程：
-1. 生成初版用例
-2. 执行评测
-3. 分析评测结果
-4. 优化Prompt或模型
-5. 重复步骤1-4
-```
-
----
 
 ## 📊 分数解读
 
@@ -393,50 +253,6 @@ MODEL_CONFIG = {
 
 ---
 
-## 🛠️ 常见问题
-
-### Q: 首次运行很慢？
-
-**A:** 这是正常的。首次运行需要下载预训练模型（~400MB）。后续运行会快很多。
-
-### Q: 如何加快速度？
-
-**A:** 有几种方式：
-
-```python
-# 方式1：使用GPU加速
-# 编辑 evaluation/config.py，改 device 为 "cuda"
-
-# 方式2：禁用相似度模型（快但准确性降低）
-evaluator = Evaluator(use_similarity_model=False)
-
-# 方式3：减少用例数量进行测试
-```
-
-### Q: 如何使用自己的数据？
-
-**A:** 三种方式：
-
-```bash
-# 方式1：修改demo.py中的文件路径
-# 方式2：使用命令行工具
-python main.py evaluate your_file.txt -r ref.txt -p prd.txt
-
-# 方式3：写Python脚本调用API
-```
-
-### Q: 报告在哪里？
-
-**A:** 所有报告都在：
-```
-data/evaluation_results/demo_results/
-```
-
-### Q: 如何自定义评测指标？
-
-**A:** 编辑 `evaluation/config.py` 中的 `METRIC_WEIGHTS`
-
----
 
 ## 📚 文档
 
@@ -477,17 +293,6 @@ data/evaluation_results/demo_results/
 ✅ 提供清晰的改进指导  
 ✅ 支持版本对比和迭代改进  
 
----
-
-## 📞 支持
-
-遇到问题？
-
-1. 查看日志：`cat logs/evaluation.log`
-2. 查看文档：`QUICKSTART.md` 或 `RUN_GUIDE.md`
-3. 检查配置：`evaluation/config.py`
-
----
 
 ## 📄 许可证
 
@@ -504,11 +309,4 @@ data/evaluation_results/demo_results/
 
 ---
 
-**准备好了吗？** 👉 [快速开始](./QUICKSTART.md)
-
-```bash
-python demo.py
-```
-
-祝你使用愉快！🎉
 
